@@ -31,6 +31,16 @@
             'imagen' => 'https://picsum.photos/seed/keyboard/800/600',
             'estado' => 'Activo',
         ],
+
+        [
+        'id_producto' => 4,
+        'nombre' => 'Mouse gamer RGB',
+        'precio' => 79900,
+        'descripcion' => 'Mouse ergonómico con sensor de alta precisión y RGB personalizable.',
+        'imagen' => 'https://picsum.photos/seed/mousegamer/800/600',
+        'estado' => 'Activo',
+        ],
+
     ];
 @endphp
 
