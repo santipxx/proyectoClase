@@ -1,59 +1,116 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+## 👤 Información del Autor
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+<img src>
+Nombre: Santiago Pérez
+<img src ="https://postimg.cc/yk11xrdw>" width ="100" alt="yo">
+Edad: 20 años
 
-## About Laravel
+Carrera: Estudiante de Ingeniería de Sistemas
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Semestre: 5° semestre
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Perfil: Apasionado por el desarrollo de software y el deporte
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 📖 Descripción del Proyecto
 
-## Learning Laravel
+Este documento presenta las tecnologías utilizadas en el desarrollo del proyecto, enfocándose en PHP como lenguaje de programación y Laravel como framework principal para la construcción de aplicaciones web modernas, seguras y escalables.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+El objetivo es explicar de manera clara las herramientas empleadas, sus ventajas y el motivo de su elección.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## 🐘 ¿Qué es PHP?
 
-## Laravel Sponsors
+PHP (Hypertext Preprocessor) es un lenguaje de programación del lado del servidor ampliamente utilizado para el desarrollo web.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+⚙ Características de PHP
 
-### Premium Partners
+Lenguaje de código abierto.
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+Integración sencilla con HTML.
 
-## Contributing
+Compatible con múltiples bases de datos (MySQL, PostgreSQL, etc.).
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Amplia comunidad y documentación.
 
-## Code of Conduct
+Gran soporte en servidores web.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## 🎯 ¿Por qué usar PHP?
 
-## Security Vulnerabilities
+Es uno de los lenguajes más utilizados en desarrollo web.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Permite crear aplicaciones dinámicas.
 
-## License
+Es flexible y eficiente para proyectos académicos y profesionales.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Tiene una curva de aprendizaje accesible.
+
+## 🚀 ¿Qué es Laravel?
+
+Laravel es un framework de PHP que facilita el desarrollo de aplicaciones web mediante una estructura organizada y buenas prácticas.
+
+Se basa en la arquitectura MVC (Modelo - Vista - Controlador), lo que permite separar la lógica del negocio, la interfaz y el manejo de datos.
+
+## 🏗 Características de Laravel
+
+Arquitectura MVC.
+
+Sistema de rutas intuitivo.
+
+Migraciones y manejo de base de datos con Eloquent ORM.
+
+Autenticación y seguridad integradas.
+
+Motor de plantillas Blade.
+
+Soporte para APIs REST.
+
+Sistema de validaciones robusto.
+
+## ✅ Ventajas de Laravel
+
+Código limpio y mantenible.
+
+Desarrollo más rápido y estructurado.
+
+Mayor seguridad en comparación con PHP puro.
+
+Escalabilidad para proyectos grandes.
+
+Comunidad activa y documentación completa.
+
+## 🛠 Tecnologías Complementarias
+
+MySQL – Gestión de base de datos.
+
+HTML – Estructura de la aplicación.
+
+CSS – Estilos y diseño visual.
+
+JavaScript – Interactividad.
+
+Git – Control de versiones.
+
+Composer – Gestión de dependencias en PHP.
+
+## 🎓 Objetivo Académico
+
+Aplicar los conocimientos adquiridos en la carrera para desarrollar una aplicación web funcional, implementando buenas prácticas de programación, arquitectura MVC y principios de desarrollo seguro.
+
+## 📚 Aprendizajes Obtenidos
+
+Implementación del patrón MVC.
+
+Manejo de rutas y controladores.
+
+Conexión y gestión de bases de datos.
+
+Uso de migraciones y seeders.
+
+Aplicación de autenticación y validaciones.
+
+Trabajo con control de versiones (Git).
+
+## 💪 Perfil Profesional
+
+Soy Santiago Pérez, estudiante de 5° semestre de Ingeniería de Sistemas. Me interesa el desarrollo backend y la construcción de soluciones tecnológicas eficientes.
+
+Además, practico deporte regularmente, lo que me ha permitido desarrollar disciplina, constancia y trabajo en equipo, habilidades que aplico también en el desarrollo de software.
