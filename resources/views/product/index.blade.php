@@ -1,13 +1,44 @@
 @extends('layouts.app')
 
-@section('title', 'Listado de Productos')
+@section('title', 'Catálogo de Productos')
 
 @section('content')
+
+@php
+    // Demo (si aún no pasas $productos desde el controlador)
+    $productos = $productos ?? [
+        [
+            'id_producto' => 1,
+            'nombre' => 'Control inalámbrico',
+            'precio' => 189900,
+            'descripcion' => 'Control ergonómico para PC/Consola con vibración.',
+            'imagen' => 'https://picsum.photos/seed/control/800/600',
+            'estado' => 'Activo',
+        ],
+        [
+            'id_producto' => 2,
+            'nombre' => 'Audífonos gamer',
+            'precio' => 129900,
+            'descripcion' => 'Sonido envolvente y micrófono con cancelación de ruido.',
+            'imagen' => 'https://picsum.photos/seed/headset/800/600',
+            'estado' => 'Inactivo',
+        ],
+        [
+            'id_producto' => 3,
+            'nombre' => 'Teclado mecánico',
+            'precio' => 219900,
+            'descripcion' => 'Switches táctiles, iluminación RGB, hot-swap.',
+            'imagen' => 'https://picsum.photos/seed/keyboard/800/600',
+            'estado' => 'Activo',
+        ],
+    ];
+@endphp
+
 <div class="card">
     <div class="card__head">
         <div>
-            <h2 class="card__title">Productos</h2>
-            <p class="card__sub">Listado general (demo). Puedes conectar esto a BD cuando quieras.</p>
+            <h2 class="card__title">Catálogo</h2>
+            <p class="card__sub">Explora los productos disponibles.</p>
         </div>
 
         <div class="actions">
@@ -15,92 +46,44 @@
         </div>
     </div>
 
-    @php
-        // Datos de ejemplo (para que se vea la tabla).
-        // Luego reemplazas esto por $productos desde tu controlador.
-        $productos = $productos ?? [
-            [
-                'id_producto' => 1,
-                'nombre' => 'Control inalámbrico',
-                'precio' => 189900,
-                'descripcion' => 'Control ergonómico para PC/Consola con vibración.',
-                'imagen' => 'https://picsum.photos/seed/control/120/120',
-                'estado' => 'Activo',
-            ],
-            [
-                'id_producto' => 2,
-                'nombre' => 'Audífonos gamer',
-                'precio' => 129900,
-                'descripcion' => 'Sonido envolvente y micrófono con cancelación de ruido.',
-                'imagen' => 'https://picsum.photos/seed/headset/120/120',
-                'estado' => 'Inactivo',
-            ],
-            [
-                'id_producto' => 3,
-                'nombre' => 'Teclado mecánico',
-                'precio' => 219900,
-                'descripcion' => 'Switches táctiles, iluminación RGB, hot-swap.',
-                'imagen' => 'https://picsum.photos/seed/keyboard/120/120',
-                'estado' => 'Activo',
-            ],
-        ];
-    @endphp
-
-    <div class="tableWrap">
-        <table>
-            <thead>
-                <tr>
-                    <th>Imagen</th>
-                    <th>ID</th>
-                    <th>Nombre</th>
-                    <th>Precio</th>
-                    <th>Descripción</th>
-                    <th>Estado</th>
-                    <th style="width: 180px;">Acciones</th>
-                </tr>
-            </thead>
-
-            <tbody>
-                @foreach($productos as $p)
-                    <tr>
-                        <td>
-                            <div class="thumb">
-                                <img src="{{ $p['imagen'] }}" alt="Imagen producto">
-                            </div>
-                        </td>
-
-                        <td>{{ $p['id_producto'] }}</td>
-                        <td><strong>{{ $p['nombre'] }}</strong></td>
-
-                        <td>
-                            ${{ number_format($p['precio'], 0, ',', '.') }}
-                        </td>
-
-                        <td style="max-width: 360px;">
-                            <span class="muted">{{ $p['descripcion'] }}</span>
-                        </td>
-
-                        <td>
+    <div style="padding: 18px;">
+        <div class="catalog">
+            @foreach($productos as $p)
+                <div class="productCard">
+                    <div class="productCard__img">
+                        <img src="{{ $p['imagen'] }}" alt="Imagen de {{ $p['nombre'] }}">
+                        <div class="productCard__badge">
                             @if(strtolower($p['estado']) === 'activo')
                                 <span class="badge badge--ok">Activo</span>
                             @else
                                 <span class="badge badge--off">Inactivo</span>
                             @endif
-                        </td>
+                        </div>
+                    </div>
 
-                        <td>
-                            <div class="actions">
-                                {{-- si luego usas route model binding: /product/{id} --}}
-                                <a class="btn" href="{{ url('/product/'.$p['id_producto']) }}">Ver</a>
-                                <a class="btn btn--ghost" href="#">Editar</a>
-                                <button class="btn btn--danger" type="button">Eliminar</button>
-                            </div>
-                        </td>
-                    </tr>
-                @endforeach
-            </tbody>
+                    <div class="productCard__body">
+                        <div class="productCard__top">
+                            <h3 class="productCard__title">{{ $p['nombre'] }}</h3>
+                            <p class="productCard__price">
+                                ${{ number_format($p['precio'], 0, ',', '.') }}
+                            </p>
+                        </div>
 
-        </table>
+                        <p class="productCard__desc">{{ $p['descripcion'] }}</p>
+
+                        <div class="productCard__meta">
+                            <span class="metaPill">ID: {{ $p['id_producto'] }}</span>
+                        </div>
+
+                        <div class="productCard__actions">
+                            <a class="btn btn--primary" href="{{ url('/product/'.$p['id_producto']) }}">Ver specs</a>
+                            <a class="btn btn--ghost" href="#">Editar</a>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
     </div>
 </div>
+
 @endsection
