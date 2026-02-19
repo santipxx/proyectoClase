@@ -6,22 +6,23 @@
 
 @php
     // Demo (si aún no pasas $producto desde el controlador)
-    $producto = $producto ?? [
-        'id_producto' => 1,
-        'nombre' => 'Control inalámbrico',
-        'precio' => 189900,
-        'descripcion' => 'Control ergonómico para PC/Consola con vibración.',
-        'imagen' => 'https://picsum.photos/seed/control/1200/800',
-        'estado' => 'Activo',
-        // "Especificaciones" de ejemplo:
-        'specs' => [
-            'Conectividad' => 'Bluetooth / USB',
-            'Compatibilidad' => 'PC, Xbox, PlayStation (según adaptador)',
-            'Batería' => 'Hasta 10 horas',
-            'Material' => 'ABS + grip antideslizante',
-            'Garantía' => '6 meses',
+    $producto = [
+    'id_producto' => 4,
+    'nombre' => 'Mouse gamer RGB',
+    'precio' => 79900,
+    'descripcion' => 'Mouse ergonómico con sensor de alta precisión, 6 botones programables y RGB personalizable.',
+    'imagen' => 'https://picsum.photos/seed/mousegamer/1200/800',
+    'estado' => 'Activo',
+    'specs' => [
+        'DPI' => '200 – 12.000 (ajustable)',
+        'Botones' => '6 programables',
+        'Conexión' => 'USB (cable trenzado)',
+        'Peso' => '95 g (aprox.)',
+        'Iluminación' => 'RGB configurable',
+        'Garantía' => '6 meses',
         ],
     ];
+
 @endphp
 
 <div class="card">
