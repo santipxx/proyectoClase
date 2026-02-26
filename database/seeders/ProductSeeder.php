@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 use App\Models\Product;
+use App\Models\Category;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -24,7 +25,7 @@ class ProductSeeder extends Seeder
         $product2->name="Mouse";
         $product2->description="mouse viejo barato";
         $product2->price=13000;
-        $product2->category_id= 2;
+        $product2->category_id= Category::inRandomOrder()->first()->id;
         $product2->save();
         
         
@@ -32,7 +33,7 @@ class ProductSeeder extends Seeder
         $product3->name="Teclado";
         $product3->description="Teclado gamer";
         $product3->price=150000;
-        $product3->category_id= 3;
+        $product3->category_id= Category::inRandomOrder()->first()->id;
         $product3->save();
     }
 
