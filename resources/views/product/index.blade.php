@@ -12,9 +12,12 @@
       <div class="product-card-enhanced">
 
         <div class="product-image">
+          @if($product->image)
+            <img src="{{asset('storage/'.$product->image)  }}" alt="{{ $product->name }}">
+          @else
+           <img src="https://saberdetodo.com/wp-content/uploads/imagenes-1068x801.jpg" alt="">
+          @endif
           
-
-          <img src="{{ $product->imagen }}" alt="{{ $product->name }}">
         </div>
 
         <div class="product-info">
