@@ -15,15 +15,11 @@
         </div>
     </div>
 
-    <form class="form" action="#" method="POST" enctype="multipart/form-data">
+    <form class="form" action="{{ route('product.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
 
         <div class="grid">
-            <div>
-                <label for="id_producto">ID Producto</label>
-                <input class="input" type="number" id="id_producto" name="id_producto" placeholder="Ej: 10">
-                <div class="helper">Si luego usas BD, normalmente este campo lo genera la base de datos.</div>
-            </div>
+            
 
             <div>
                 <label for="nombre">Nombre</label>
@@ -38,10 +34,11 @@
             </div>
 
             <div>
-                <label for="estado">Estado</label>
-                <select id="estado" name="estado">
-                    <option value="Activo">Activo</option>
-                    <option value="Inactivo">Inactivo</option>
+                <label for="estado">Categoria</label>
+                <select id="category" name="category">
+                    @foreach($categoryList as $category)
+                        <option value="{{$category->id}}">{{$category->name}}</option>
+                    @endforeach
                 </select>
             </div>
         </div>
