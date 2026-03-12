@@ -31,6 +31,12 @@
           <div class="card-actions">
             <a class="btn btn-secondary" href="{{ url('/product/'.$product->id_producto.'/edit') }}">Editar</a>
             <a class="btn btn-primary" href="{{ url('/product/'.$product->id_producto) }}">Detalles</a>
+            <form action="{{route('product.destroy', $product)}}" method="POST">
+              @method('delete') 
+              @csrf 
+              <button class ="btn btn-primary">Eliminar</button>
+            </form>
+            
           </div>
         </div>
 
