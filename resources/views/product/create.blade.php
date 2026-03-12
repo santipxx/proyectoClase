@@ -25,6 +25,11 @@
                 <label for="nombre">Nombre</label>
                 <input class="input" type="text" id="nombre" name="nombre" placeholder="Ej: Teclado mecánico">
             </div>
+            @error('nombre')
+            <span style="color: red; font: size 14px;">Hay un error en la validacion</span>
+                
+
+            @enderror
         </div>
 
         <div class="grid">
@@ -32,6 +37,11 @@
                 <label for="precio">Precio</label>
                 <input class="input" type="number" id="precio" name="precio" placeholder="Ej: 199900">
             </div>
+            @error('precio')
+            <span style="color: red; font: size 14px;">Hay un error en la validacion</span>
+                
+
+            @enderror
 
             <div>
                 <label for="estado">Categoria</label>
@@ -41,18 +51,33 @@
                     @endforeach
                 </select>
             </div>
+            @error('category')
+            <span style="color: red; font: size 14px;">Hay un error en la validacion</span>
+                
+
+            @enderror
         </div>
 
         <div>
             <label for="descripcion">Descripción</label>
             <textarea id="descripcion" name="descripcion" placeholder="Describe el producto..."></textarea>
         </div>
+        @error('drescripcion')
+            <span style="color: red; font: size 14px;">Hay un error en la validacion</span>
+                
+
+        @enderror
 
         <div>
             <label for="imagen">Imagen</label>
             <input class="input" type="file" id="imagen" name="imagen" accept="image/*">
             <div class="helper">Formatos recomendados: JPG/PNG/WebP.</div>
         </div>
+        @error('imagen')
+            <span style="color: red; font: size 14px;">Hay un error en la validacion</span>
+                
+
+            @enderror
 
         <div class="actions">
             <button class="btn btn--primary" type="submit">Guardar producto</button>
