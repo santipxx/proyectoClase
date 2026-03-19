@@ -104,9 +104,9 @@
         </div>
 
         <div class="hidden md:flex items-center gap-8 text-sm font-medium">
-            <a href="#" class="text-slate-600 dark:text-slate-300 hover:text-blue-500 transition-colors">Catálogo</a>
+            <a href="{{ url('/product') }}" class="text-slate-600 dark:text-slate-300 hover:text-blue-500 transition-colors">Catálogo</a>
             <a href="#" class="text-slate-600 dark:text-slate-300 hover:text-blue-500 transition-colors">Categorías</a>
-            <a href="#" class="text-slate-600 dark:text-slate-300 hover:text-blue-500 transition-colors">Ofertas</a>
+            <a href="#offers" class="text-slate-600 dark:text-slate-300 hover:text-blue-500 transition-colors">Ofertas</a>
             <a href="#" class="text-slate-600 dark:text-slate-300 hover:text-blue-500 transition-colors">Nosotros</a>
         </div>
 
@@ -238,7 +238,7 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
                 @forelse($productos as $product)
                     <div class="group hover-lift relative reveal-anim">
-                        <div class="relative aspect-square rounded-[2rem] overflow-hidden bg-slate-100 dark:bg-slate-800 mb-6">
+                        <a href="{{ route('product.show', $product) }}" class="relative block aspect-square rounded-[2rem] overflow-hidden bg-slate-100 dark:bg-slate-800 mb-6">
                             @if($product->image)
                                 <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                             @else
@@ -255,16 +255,18 @@
 
                             <!-- Cart Overlay -->
                             <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                                <button class="w-14 h-14 bg-white text-slate-900 rounded-full flex items-center justify-center shadow-2xl scale-75 group-hover:scale-100 transition-transform duration-300">
+                                <span class="w-14 h-14 bg-white text-slate-900 rounded-full flex items-center justify-center shadow-2xl scale-75 group-hover:scale-100 transition-transform duration-300">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                                     </svg>
-                                </button>
+                                </span>
                             </div>
-                        </div>
+                        </a>
 
                         <div>
-                            <h3 class="text-xl font-bold mb-2 group-hover:text-blue-500 transition-colors">{{ $product->name }}</h3>
+                            <a href="{{ route('product.show', $product) }}">
+                                <h3 class="text-xl font-bold mb-2 group-hover:text-blue-500 transition-colors">{{ $product->name }}</h3>
+                            </a>
                             <p class="text-slate-500 text-sm mb-4 line-clamp-2">{{ Str::limit($product->description, 80) }}</p>
                             <div class="flex items-center justify-between">
                                 <span class="text-2xl font-black text-slate-900 dark:text-white">${{ number_format($product->price, 0) }}</span>
@@ -295,8 +297,8 @@
         </div>
     </section>
 
-    <!-- Marketing Section -->
-    <section class="py-24 px-6 relative overflow-hidden bg-blue-600 text-white">
+    <!-- Marketing Section / Offers -->
+    <section id="offers" class="py-24 px-6 relative overflow-hidden bg-blue-600 text-white">
         <div class="absolute top-0 right-0 w-1/2 h-full bg-blue-700 -skew-x-12 translate-x-1/2 z-0"></div>
         <div class="max-w-7xl mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-2 items-center gap-16">
             <div>

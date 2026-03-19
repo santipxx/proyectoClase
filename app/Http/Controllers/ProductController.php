@@ -9,8 +9,8 @@ use Illuminate\Http\Request;
 class ProductController extends Controller
 {
     public function index(){
-        $productList = Product::limit(10)->orderBy('id','desc')->get();
-        return view('.product.index', [
+        $productList = Product::with('category')->orderBy('id','desc')->get();
+        return view('product.index', [
             'misProductos' => $productList
         ]);
     }
@@ -53,8 +53,9 @@ class ProductController extends Controller
         return redirect()->route('product.index');
 
     }
-    public function show($producto){
-        return view('.product.show');
+    public function show(Product $product){
+        $product->load('category');
+        return view('product.show', compact('product'));
     }
 
     public function destroy(Product $product){
