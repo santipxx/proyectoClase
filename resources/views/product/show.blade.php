@@ -62,6 +62,13 @@
                 </div>
             </div>
 
+            <div class="actions" style="margin-bottom: 2rem;">
+                <form action="{{ route('cart.add', $product) }}" method="POST">
+                    @csrf
+                    <button class="btn btn--primary" type="submit" style="width: 100%; justify-content: center; background: #3b82f6; color: white;">Añadir al Carrito 🛒</button>
+                </form>
+            </div>
+
             <div class="actions">
                 <form action="{{ route('product.destroy', $product) }}" method="POST" onsubmit="return confirm('¿Estás seguro de que deseas eliminar este producto?')">
                     @csrf

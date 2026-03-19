@@ -11,6 +11,14 @@ Route::prefix('admin')->group(function() {
     Route::resource('categories', \App\Http\Controllers\CategoryController::class);
 });
 
+Route::prefix('cart')->controller(\App\Http\Controllers\CartController::class)->group(function() {
+    Route::get('/', 'view')->name('cart.view');
+    Route::post('/add/{product}', 'add')->name('cart.add');
+    Route::post('/remove/{id}', 'remove')->name('cart.remove');
+    Route::get('/checkout', 'checkout')->name('cart.checkout');
+    Route::post('/checkout', 'processCheckout')->name('cart.process');
+});
+
 
 Route::prefix('product')->controller(ProductController::class)->group(function(){
     Route::get('/','index')->name('product.index');

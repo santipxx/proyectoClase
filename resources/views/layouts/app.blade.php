@@ -27,6 +27,14 @@
             <nav class="nav">
                 <a class="nav__link" href="{{ url('/') }}">Inicio</a>
                 <a class="nav__link" href="{{ url('/product') }}">Productos</a>
+                <a class="nav__link" href="{{ route('cart.view') }}" style="position: relative;">
+                    Carrito 🛒
+                    @if(session('cart') && count(session('cart')) > 0)
+                        <span style="position: absolute; top: -8px; right: -8px; background: #3b82f6; color: white; border-radius: 50%; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 800; border: 2px solid white;">
+                            {{ count(session('cart')) }}
+                        </span>
+                    @endif
+                </a>
                 <a class="nav__btn" href="{{ url('/product/create') }}">+ Crear</a>
             </nav>
         </div>
