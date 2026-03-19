@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     public function __invoke(){
-        return view('welcome');
+        $productos = \App\Models\Product::latest()->limit(6)->get();
+        return view('landing', compact('productos'));
     }
 }
