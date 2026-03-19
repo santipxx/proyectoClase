@@ -5,7 +5,11 @@ use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/',HomeController::class);
-Route::get('/admin', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+
+Route::prefix('admin')->group(function() {
+    Route::get('/', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+    Route::resource('categories', \App\Http\Controllers\CategoryController::class);
+});
 
 
 Route::prefix('product')->controller(ProductController::class)->group(function(){

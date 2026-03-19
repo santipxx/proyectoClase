@@ -230,12 +230,17 @@
 
         <nav class="sidebar-nav">
             <div class="nav-item">
-                <a href="/admin" class="nav-link active">
+                <a href="{{ route('admin.dashboard') }}" class="nav-link {{ request()->routeIs('admin.dashboard') ? 'active' : '' }}">
                     <i>📊</i> Dashboard
                 </a>
             </div>
             <div class="nav-item">
-                <a href="/product" class="nav-link">
+                <a href="{{ route('categories.index') }}" class="nav-link {{ request()->routeIs('categories.*') ? 'active' : '' }}">
+                    <i>📁</i> Categorías
+                </a>
+            </div>
+            <div class="nav-item">
+                <a href="{{ route('product.index') }}" class="nav-link">
                     <i>📦</i> Productos
                 </a>
             </div>
